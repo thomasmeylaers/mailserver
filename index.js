@@ -28,7 +28,7 @@ app.get('/test', (req, res) => {
     console.log(process.env.MAIL_PW)
 })
 
-app.post('/contact/maison', (req, res) => {
+app.post('/mailserver/maison', (req, res) => {
     // Mailoptions
     var mailOptionsMaison = {
         from: 'noreply <noreply@freshpepperdesign.com>',
@@ -44,7 +44,7 @@ app.post('/contact/maison', (req, res) => {
     // Send mail
     transporter.sendMail(mailOptionsMaison, function (err, data) {
         if (err) return res.status(500).send(err)
-        res.redirect("http://127.0.0.1:5501/index.html")
+        res.redirect("https://freshpepperdesign.com/maison/")
     });
 })
 
