@@ -25,7 +25,7 @@ var transporter = nodemailer.createTransport({
 });
 
 app.get('/test', (req, res) => {
-    console.log(process.env.MAIL_PW)
+    res.send("TEST");
 })
 
 app.post('/mailserver/maison', (req, res) => {
