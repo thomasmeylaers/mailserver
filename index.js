@@ -24,7 +24,7 @@ var transporter = nodemailer.createTransport({
     }
 });
 
-app.get('/test', (req, res) => {
+app.get('/mailserver/test', (req, res) => {
     res.send("TEST");
 })
 
