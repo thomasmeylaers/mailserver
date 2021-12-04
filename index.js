@@ -44,7 +44,7 @@ app.post('/mailserver/maison', (req, res) => {
     // Send mail
     transporter.sendMail(mailOptionsMaison, function (err, data) {
         if (err) return res.status(500).send(err)
-        res.redirect("https://freshpepperdesign.com/maison/")
+        res.redirect(`https://maisonlaventure.be/${req.body.language}`)
     });
 })
 
