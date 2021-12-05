@@ -32,13 +32,13 @@ app.post('/mailserver/maison', (req, res) => {
     // Mailoptions
     var mailOptionsMaison = {
         from: 'noreply <noreply@freshpepperdesign.com>',
-        to: 'thomas.meylaers@gmail.com',
+        to: 'info@maisonlaventure.be',
         subject: "Nieuw bericht van maisonlaventure.be",
-        html: `<h6>Voornaam: ${req.body.voornaam}</h6>
-                <h6>Achternaam: ${req.body.achternaam}</h6>
-                <h6>E-mail: ${req.body.email}</h6>
-                <h6>Telefoonnummer: ${req.body.telefoon}</h6>
-                <h6>Bericht: ${req.body.bericht}</h6>
+        html: `<h3>Voornaam: ${req.body.voornaam}</h3>
+                <h3>Achternaam: ${req.body.achternaam}</h3>
+                <h3>E-mail: ${req.body.email}</h3>
+                <h3>Telefoonnummer: ${req.body.telefoon}</h3>
+                <h3>Bericht: ${req.body.bericht}</h3>
                 `
     };
     // Send mail
