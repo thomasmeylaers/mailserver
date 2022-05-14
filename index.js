@@ -42,7 +42,7 @@ app.post('/mailserver/maison', (req, res) => {
     // Mailoptions
     var mailOptionsMaison = {
         from: 'noreply <noreply@freshpepperdesign.com>',
-        to: 'thomas.meylaers@gmail.com',
+        to: 'info@maisonlaventure.be',
         subject: "Nieuw bericht van maisonlaventure.be",
         html: `<h3>Voornaam: ${req.body.voornaam}</h3>
                 <h3>Achternaam: ${req.body.achternaam}</h3>
