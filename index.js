@@ -20,7 +20,7 @@ var transporter = nodemailer.createTransport({
     secure: true, // true for 465, false for other ports
     auth: {
         user: 'noreply@freshpepperdesign.com', // your domain email address
-        pass: process.env.MAIL_PW // your password
+        pass: 'piripiri101' // your password
     }
 });
 
@@ -30,7 +30,7 @@ var transporter_maison = nodemailer.createTransport({
     secure: true,
     auth: {
         user: 'noreply@maisonlaventure.be',
-        pass: process.env.MAISON_PW
+        pass: 'NoreplyMaison568'
     }
 })
 
@@ -40,22 +40,22 @@ app.get('/mailserver/test', (req, res) => {
 
 app.post('/mailserver/maison', (req, res) => {
     // Mailoptions
-    // var mailOptionsMaison = {
-    //     from: 'noreply <noreply@freshpepperdesign.com>',
-    //     to: 'thomas.meylaers@gmail.com',
-    //     subject: "Nieuw bericht van maisonlaventure.be",
-    //     html: `<h3>Voornaam: ${req.body.voornaam}</h3>
-    //             <h3>Achternaam: ${req.body.achternaam}</h3>
-    //             <h3>E-mail: ${req.body.email}</h3>
-    //             <h3>Telefoonnummer: ${req.body.telefoon}</h3>
-    //             <h3>Bericht: ${req.body.bericht}</h3>
-    //             `
-    // };
-    // // Send mail
-    // transporter.sendMail(mailOptionsMaison, function (err, data) {
-    //     if (err) return res.status(500).send(err)
-    //     res.redirect(`https://maisonlaventure.be/${req.body.language}`)
-    // });
+    var mailOptionsMaison = {
+        from: 'noreply <noreply@freshpepperdesign.com>',
+        to: 'thomas.meylaers@gmail.com',
+        subject: "Nieuw bericht van maisonlaventure.be",
+        html: `<h3>Voornaam: ${req.body.voornaam}</h3>
+                <h3>Achternaam: ${req.body.achternaam}</h3>
+                <h3>E-mail: ${req.body.email}</h3>
+                <h3>Telefoonnummer: ${req.body.telefoon}</h3>
+                <h3>Bericht: ${req.body.bericht}</h3>
+                `
+    };
+    // Send mail
+    transporter.sendMail(mailOptionsMaison, function (err, data) {
+        if (err) return res.status(500).send(err)
+        res.redirect(`https://maisonlaventure.be/${req.body.language}`)
+    });
 
     // Mailoptions
     var mailOptionsMaisonNoreply = {
