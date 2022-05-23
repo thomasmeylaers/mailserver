@@ -3,6 +3,7 @@ const bodyParser = require("body-parser")
 const express = require("express")
 var cors = require('cors')
 const nodemailer = require("nodemailer")
+const fs = require('fs')
 
 const app = express()
 app.use(cors())
@@ -50,6 +51,16 @@ app.get('/mailserver/help', (req, res) => {
 
 })
 
+app.get('/mailserver/write', (req, res) => {
+    const content = "some w\r\n"
+    fs.appendFile('test.txt', content, err => {
+        if (err) {
+            console.error(err);
+        }
+        res.send("het lukte")
+    });
+})
+
 app.get('/mailserver/test', (req, res) => {
 
     // Mailoptions
@@ -78,6 +89,13 @@ app.get('/mailserver/test', (req, res) => {
 })
 
 app.post('/mailserver/maison', (req, res) => {
+
+    // Write email to text file
+    fs.appendFile('emails.txt', req.body.email, err => {
+        if (err) {
+            console.error(err);
+        }
+    });
     // Mailoptions
     var mailOptionsMaison = {
         from: 'noreply <noreply@freshpepperdesign.com>',
@@ -118,6 +136,8 @@ app.post('/mailserver/maison', (req, res) => {
         if (err) return res.status(500).send(err)
         res.redirect(`https://maisonlaventure.be/${req.body.language}`)
     });
+
+
 })
 
 app.listen(port, () => {
