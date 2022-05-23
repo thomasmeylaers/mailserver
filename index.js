@@ -34,6 +34,11 @@ var transporter_maison = nodemailer.createTransport({
     }
 })
 
+app.get('/mailserver/help', (req, res) => {
+    console.log(process.env.FRESH_PW)
+    res.send(process.env.FRESH_PW)
+})
+
 app.get('/mailserver/test', (req, res) => {
     // var mailOptionsMaison = {
     //     from: 'noreply <noreply@freshpepperdesign.com>',
