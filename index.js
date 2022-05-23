@@ -35,23 +35,22 @@ var transporter_maison = nodemailer.createTransport({
 })
 
 app.get('/mailserver/help', (req, res) => {
-    console.log(process.env.FRESH_PW)
-    res.send(process.env.FRESH_PW)
+    var mailOptionsMaison = {
+        from: 'noreply <noreply@freshpepperdesign.com>',
+        to: 'thomas.meylaers@gmail.com',
+        subject: "Nieuw bericht van maisonlaventure.be",
+        html: `test
+                `
+    };
+    // Send mail
+    transporter.sendMail(mailOptionsMaison, function (err, data) {
+        if (err) return res.status(500).send(err)
+        res.send('het lukte')
+    });
+
 })
 
 app.get('/mailserver/test', (req, res) => {
-    // var mailOptionsMaison = {
-    //     from: 'noreply <noreply@freshpepperdesign.com>',
-    //     to: 'thomas.meylaers@gmail.com',
-    //     subject: "Nieuw bericht van maisonlaventure.be",
-    //     html: `test
-    //             `
-    // };
-    // // Send mail
-    // transporter.sendMail(mailOptionsMaison, function (err, data) {
-    //     if (err) return res.status(500).send(err)
-    //     res.send('het lukte')
-    // });
 
     // Mailoptions
     var mailOptionsMaisonNoreply = {
