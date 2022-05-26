@@ -61,6 +61,16 @@ app.get('/mailserver/write', (req, res) => {
     });
 })
 
+app.get('/mailserver/write2', (req, res) => {
+    const content = "thomas.meylaers@gmail.com\r\n"
+    fs.appendFile('emails.txt', content, err => {
+        if (err) {
+            console.error(err);
+        }
+        res.send("het lukte")
+    });
+})
+
 app.get('/mailserver/test', (req, res) => {
 
     // Mailoptions
