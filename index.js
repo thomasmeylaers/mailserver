@@ -4,6 +4,12 @@ const express = require("express")
 var cors = require('cors')
 const nodemailer = require("nodemailer")
 const fs = require('fs')
+const mongoose = require('mongoose')
+const Reservering = require('./Reservering')
+
+mongoose.connect(`mongodb+srv://Thomas:${process.env.MONGO_PW}@maison.z7upk72.mongodb.net/?retryWrites=true&w=majority`, () => {
+    console.log("Connected to MongoDB")
+}, e => console.log(e))
 
 const app = express()
 app.use(cors())
@@ -13,6 +19,8 @@ app.use(express.json());
 app.use(express.urlencoded({
     extended: true
 }));
+
+
 
 // Transporter
 var transporter = nodemailer.createTransport({
@@ -33,6 +41,17 @@ var transporter_maison = nodemailer.createTransport({
         user: 'noreply@maisonlaventure.be',
         pass: process.env.MAISON_PW
     }
+})
+
+app.get('/mongotest', async (req, res) => {
+    const new_reservering = await Reservering.create({
+        voornaam: "thomas",
+        achternaam: "meylaers",
+        email: 'thomas@meylaers.com',
+        telefoon: '+23121245',
+        bericht: 'abcsdef'
+    })
+    console.log(new_reservering)
 })
 
 app.get('/mailserver/help', (req, res) => {
@@ -98,10 +117,73 @@ app.get('/mailserver/test', (req, res) => {
     });
 })
 
-app.post('/mailserver/maison', (req, res) => {
+app.post('/simulatie', async (req, res) => {
 
-    // Write email to text file
-    fs.appendFile('emails.txt', req.body.email, err => {
+    // Sla reservering op in MongoDB
+    const new_reservering = await Reservering.create({
+        voornaam: req.body.voornaam,
+        achternaam: req.body.achternaam,
+        email: req.body.email,
+        telefoon: req.body.telefoon,
+        bericht: req.body.bericht
+    })
+    console.log(new_reservering)
+
+    // Mailoptions voor bericht naar management
+    var mailOptionsMaison = {
+        from: 'noreply <noreply@freshpepperdesign.com>',
+        to: 'thomas.meylaers@gmail.com',
+        subject: "Nieuw bericht van maisonlaventure.be",
+        html: `<h3>Voornaam: ${req.body.voornaam}</h3>
+                <h3>Achternaam: ${req.body.achternaam}</h3>
+                <h3>E-mail: ${req.body.email}</h3>
+                <h3>Telefoonnummer: ${req.body.telefoon}</h3>
+                <h3>Bericht: ${req.body.bericht}</h3>
+                `
+    };
+    // Send mail
+    transporter.sendMail(mailOptionsMaison, function (err, data) {
+        if (err) return res.status(500).send(err)
+        res.redirect(`https://maisonlaventure.be/${req.body.language}`)
+    });
+
+    // Mailoptions
+    var mailOptionsMaisonNoreply = {
+        from: 'noreply <noreply@maisonlaventure.be>',
+        to: 'thomas.meylaers@gmail.com',
+        subject: "Bedankt voor uw reservatie! [NOREPLY]",
+        html: `
+        <img style="width:15rem;" src="https://maisonlaventure.be/img/logo_transparent.png">
+        <h1>Bedankt voor uw reservatie!</h1>   
+                <h3>
+                Beste ${req.body.voornaam}</h3>
+                <h3>
+                Bedankt voor je contactaanvraag via onze website.  Je mag binnen de 24u een antwoord van ons verwachten.<br>
+                 Wij nemen  spoedig verder contact met u op.</h3>
+                 <h3>
+                Voor meer info mail naar <a href="mailto:info@maisonlaventure.be">info@maisonlaventure.be</a> </h3>
+                `
+    };
+    // Send mail
+    transporter_maison.sendMail(mailOptionsMaisonNoreply, function (err, data) {
+        if (err) return res.status(500).send(err)
+        res.redirect(`https://maisonlaventure.be/${req.body.language}`)
+    });
+
+})
+
+app.post('/mailserver/maison', async (req, res) => {
+    // Sla reservering op in MongoDB
+    const new_reservering = await Reservering.create({
+        voornaam: req.body.voornaam,
+        achternaam: req.body.achternaam,
+        email: req.body.email,
+        telefoon: req.body.telefoon,
+        bericht: req.body.bericht
+    })
+    console.log(new_reservering)
+    // // Write email to text file
+    fs.appendFile('emails.txt', `${req.body.email}\r\n`, err => {
         if (err) {
             console.error(err);
         }
