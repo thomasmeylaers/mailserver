@@ -117,7 +117,7 @@ app.get('/mailserver/test', (req, res) => {
     });
 })
 
-app.post('/simulatie', async (req, res) => {
+app.post('/mailserver/simulatie', async (req, res) => {
 
     // Sla reservering op in MongoDB
     const new_reservering = await Reservering.create({
