@@ -120,6 +120,7 @@ app.get('/mailserver/test', (req, res) => {
 
 app.post('/mailserver/simulatie', async (req, res) => {
     console.log("IK KRIJG IETS")
+    console.log(Date())
     // CAPTCHA
     // Check for captcha
     if (
@@ -127,6 +128,7 @@ app.post('/mailserver/simulatie', async (req, res) => {
         req.body.captcha === '' ||
         req.body.captcha === null
     ) {
+        console.log("PLEASE SELECT CAPTCHA")
         return res.json({ "success": false, "msg": "Please select captcha" })
     }
 
@@ -141,6 +143,7 @@ app.post('/mailserver/simulatie', async (req, res) => {
 
     // Not succesful 
     if (body.success !== undefined && !body.success) {
+        console.log("FAILED CAPTCHA VERIFICATION")
         return res.json({ "success": false, "msg": "Failed Captcha Verification" })
     }
     console.log(req.body.voornaam)
@@ -156,7 +159,7 @@ app.post('/mailserver/simulatie', async (req, res) => {
         bericht: req.body.bericht
     })
 
-    console.log(Date())
+
     console.log(new_reservering)
     console.log("-------------------------------------------------------")
 
