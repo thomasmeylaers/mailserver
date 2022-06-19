@@ -119,7 +119,7 @@ app.get('/mailserver/test', (req, res) => {
 })
 
 app.post('/mailserver/simulatie', async (req, res) => {
-
+    console.log("IK KRIJG IETS")
     // CAPTCHA
     // Check for captcha
     if (
@@ -147,6 +147,7 @@ app.post('/mailserver/simulatie', async (req, res) => {
     // return res.json({ "success": true, "msg": "Success" })
 
     // Sla reservering op in MongoDB
+    console.log("START")
     const new_reservering = await Reservering.create({
         voornaam: req.body.voornaam,
         achternaam: req.body.achternaam,
@@ -154,6 +155,10 @@ app.post('/mailserver/simulatie', async (req, res) => {
         telefoon: req.body.telefoon,
         bericht: req.body.bericht
     })
+
+    console.log(Date())
+    console.log(new_reservering)
+    console.log("-------------------------------------------------------")
 
     // Mailoptions voor bericht naar management
     var mailOptionsMaison = {
@@ -233,7 +238,9 @@ app.post('/mailserver/maison', async (req, res) => {
         telefoon: req.body.telefoon,
         bericht: req.body.bericht
     })
+    console.log(Date())
     console.log(new_reservering)
+    console.log("-------------------------------------------------------")
     // // Write email to text file
     fs.appendFile('emails.txt', `${req.body.email}\r\n`, err => {
         if (err) {
