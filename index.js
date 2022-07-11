@@ -99,16 +99,315 @@ app.get('/mailserver/test', (req, res) => {
         to: 'thomas.meylaers@gmail.com',
         subject: "Bedankt voor uw reservatie! [NOREPLY]",
         html: `
-            <img style="width:15rem;" src="https://maisonlaventure.be/img/logo_transparent.png">
-            <h1>Bedankt voor uw reservatie!</h1>   
-                    <h3>
-                    Beste </h3>
-                    <h3>
-                    Bedankt voor je contactaanvraag via onze website.  Je mag binnen de 24u een antwoord van ons verwachten.<br>
-                     Wij nemen  spoedig verder contact met u op.</h3>
-                     <h3>
-                    Voor meer info mail naar <a href="mailto:info@maisonlaventure.be">info@maisonlaventure.be</a> </h3>
-                    `
+        <h1>Bedankt voor uw reservatie!</h1>   
+                <p>
+                Beste ${req.body.voornaam}</p>
+                <p>
+                Bedankt voor je contactaanvraag via onze website.  Je mag binnen de 24u een antwoord van ons verwachten.<br></p>
+                 <p>
+                Voor meer info mail naar <a href="mailto:info@maisonlaventure.be">info@maisonlaventure.be</a> </p>
+                <br>
+                <table id="zs-output-sig" border="0" cellpadding="0" cellspacing="0"
+    style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse; width:650px;">
+    <tbody>
+      <tr>
+        <td style="padding: 0px !important;">
+          <table border="0" cellpadding="0" cellspacing="0"
+            style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse;">
+            <tbody>
+              <tr>
+                <td style="padding: 0px !important;">
+                  <table border="0" cellpadding="0" cellspacing="0"
+                    style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse;">
+                    <tbody>
+                      <tr>
+                        <td style="padding: 0px !important;">
+                          <table border="0" cellpadding="0" cellspacing="0"
+                            style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse;">
+                            <tbody>
+                              <tr>
+                                <td style="padding: 0px !important;">
+                                  <table border="0" cellpadding="0" cellspacing="0"
+                                    style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse;">
+                                    <tbody>
+                                      <tr>
+                                        <td
+                                          style="border-collapse:collapse;font-family:Helvetica, sans-serif;font-size:15.0px;font-style:normal;line-height:17px;font-weight:400;padding: 0px !important;">
+                                          <span
+                                            style="font-family:Helvetica, sans-serif;font-size:15.0px;font-style:normal;line-height:17px;font-weight:400;color:#000001;display:inline;">
+                                            Met vriendelijke groeten,</span>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td style="border-collapse:collapse;padding-bottom:7px;height:7px;"></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 0px !important;">
+          <table border="0" cellpadding="0" cellspacing="0"
+            style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse;">
+            <tbody>
+              <tr>
+                <td width="156" style="padding: 0px !important;">
+                  <table border="0" cellpadding="0" cellspacing="0"
+                    style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse;">
+                    <tbody>
+                      <tr>
+                        <td style="border-collapse:collapse;line-height:0px;padding: 0px !important;"><img height="128"
+                            width="200" alt="" border="0" src="https://maisonlaventure.be/img/mail/logo_cropped.png">
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+                <!-- asdfasdf? -->
+                <td width="11" style="border-collapse:collapse;padding-right: 10px;width:0px;"></td>
+                <td style="padding: 0px !important;width: 205px;position: relative;">
+                  <table border="0" cellpadding="0" cellspacing="0"
+                    style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse;position: absolute;top: 10px;">
+                    <tbody>
+                      <tr>
+                        <td style="padding: 0px !important;">
+                          <table border="0" cellpadding="0" cellspacing="0"
+                            style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse;">
+                            <tbody>
+                              <tr>
+                                <td style="padding: 0px !important;">
+                                  <table border="0" cellpadding="0" cellspacing="0"
+                                    style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse;">
+                                    <tbody>
+                                      <tr>
+                                        <td
+                                          style="border-collapse:collapse;font-family:Helvetica, sans-serif;font-size:15.0px;font-style:normal;line-height:17px;font-weight:400;padding: 0px !important;">
+                                          <span
+                                            style="font-family:Helvetica, sans-serif;font-size:18px;font-style:normal;line-height:17px;font-weight:800;color:#000001;display:inline;text-align: right;">Team
+                                            Maison l'Aventure</span>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td style="border-collapse:collapse;padding-bottom:1px;height:3px;"></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+
+
+                      <tr style="float: right;padding-top: 5px;">
+                        <td style="padding: 0px !important;">
+                          <table border="0" cellpadding="0" cellspacing="0"
+                            style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse; ">
+                            <tbody>
+                              <tr>
+                                <td style="padding: 0px !important;">
+                                  <table border="0" cellpadding="0" cellspacing="0"
+                                    style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse;">
+                                    <tbody>
+                                      <tr>
+                                        <td
+                                          style="border-collapse:collapse;font-family:Helvetica, sans-serif;font-size:15.0px;font-style:normal;line-height:17px;font-weight:400;padding: 0px !important;">
+                                          <span
+                                            style="font-family:Helvetica, sans-serif;font-size:15.0px;font-style:normal;font-weight:400;color:#000001;display:inline; position: relative;">
+                                            <a style="text-decoration: none; color: #000001; position: absolute; right: 28px;top: 1.3px;"
+                                              href="https://www.facebook.com/Maisonlaventure/" target="_blank"><img
+                                                style="width: 15px;"
+                                                src="https://maisonlaventure.be/img/mail/facebook.png"
+                                                alt="facebook icon"> <a style="position: absolute; right: 0;"
+                                                href="https://www.instagram.com/maison_laventure/" target="_blank"><img
+                                                  style="width: 18px;"
+                                                  src="https://maisonlaventure.be/img/mail/instagram.png"
+                                                  alt="instagram icon"></a>
+                                          </span>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td style="border-collapse:collapse;padding-bottom:1px;height:3px;"></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+                <td width="11" style="border-collapse:collapse;padding-right: 14px;width:0px;"></td>
+
+                <td width="2"
+                  style="border-collapse:collapse;background-color:#1B7034;width: 1px;vertical-align: super;padding: 0px !important;">
+                </td>
+                <td width="11" style="border-collapse:collapse;padding-right: 14px;width:0px;"></td>
+
+                <!-- asdfasdfasdf -->
+                <td style="padding: 0px !important;">
+                  <table border="0" cellpadding="0" cellspacing="0"
+                    style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse;">
+                    <tbody>
+                      <tr>
+                        <td style="padding: 0px !important;">
+                          <table border="0" cellpadding="0" cellspacing="0"
+                            style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse;">
+                            <tbody>
+                              <tr>
+                                <td style="padding: 0px !important;">
+                                  <table border="0" cellpadding="0" cellspacing="0"
+                                    style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse;">
+                                    <tbody>
+                                      <tr>
+                                        <td
+                                          style="border-collapse:collapse;font-family:Helvetica, sans-serif;font-size:15.0px;font-style:normal;line-height:17px;font-weight:400;padding: 0px !important;">
+                                          <span
+                                            style="font-family:Helvetica, sans-serif;font-size:15.0px;font-style:normal;line-height:17px;font-weight:400;color:#000001;display:inline;text-decoration: none;color: black;"><a
+                                              target="_blank" href="tel:+32475285068"
+                                              style="text-decoration: none; color:black;"><img style="width: 18px;"
+                                                src="https://maisonlaventure.be/img/mail/phone.png" alt="phone icon">
+                                              0033/9-75 35 72 71&nbsp;</a></span>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td style="border-collapse:collapse;padding-bottom:1px;height:3px;"></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 0px !important;">
+                          <table border="0" cellpadding="0" cellspacing="0"
+                            style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse;">
+                            <tbody>
+                              <tr>
+                                <td style="padding: 0px !important;">
+                                  <table border="0" cellpadding="0" cellspacing="0"
+                                    style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse;">
+                                    <tbody>
+                                      <tr>
+                                        <td
+                                          style="border-collapse:collapse;font-family:Helvetica, sans-serif;font-size:15.0px;font-style:normal;line-height:17px;font-weight:400;padding: 0px !important;">
+                                          <span
+                                            style="font-family:Helvetica, sans-serif;font-size:15.0px;font-style:normal;line-height:17px;font-weight:400;color:#000001;display:inline;">
+                                            <a href="mailto:info@maisonlaventure.be"
+                                              style="text-decoration: none; color:black;"><img style="width: 18px;"
+                                                src="https://maisonlaventure.be/img/mail/mail.png" alt="mail icon">
+                                              info@maisonlaventure.be</a> </span>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td style="border-collapse:collapse;padding-bottom:1px;height:3px;"></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 0px !important;">
+                          <table border="0" cellpadding="0" cellspacing="0"
+                            style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse;">
+                            <tbody>
+                              <tr>
+                                <td style="padding: 0px !important;">
+                                  <table border="0" cellpadding="0" cellspacing="0"
+                                    style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse;">
+                                    <tbody>
+                                      <tr>
+                                        <td
+                                          style="border-collapse:collapse;font-family:Helvetica, sans-serif;font-size:15.0px;font-style:normal;line-height:17px;font-weight:400;padding: 0px !important;">
+                                          <span
+                                            style="font-family:Helvetica, sans-serif;font-size:15.0px;font-style:normal;line-height:17px;font-weight:400;color:#000001;display:inline;">
+                                            <a style="text-decoration: none; color: #000001;"
+                                              href="https://maisonlaventure.be/" target="_blank"><img
+                                                style="width: 18px;"
+                                                src="https://maisonlaventure.be/img/mail/internet.png"
+                                                alt="internet icon"> www.maisonlaventure.be</a></span>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td style="border-collapse:collapse;padding-bottom:1px;height:3px;"></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 0px !important;">
+                          <table border="0" cellpadding="0" cellspacing="0"
+                            style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse;">
+                            <tbody>
+                              <tr>
+                                <td style="padding: 0px !important;">
+                                  <table border="0" cellpadding="0" cellspacing="0"
+                                    style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse;">
+                                    <tbody>
+                                      <tr>
+                                        <td
+                                          style="border-collapse:collapse;font-family:Helvetica, sans-serif;font-size:15.0px;font-style:normal;line-height:17px;font-weight:400;padding: 0px !important;">
+                                          <span
+                                            style="font-family:Helvetica, sans-serif;font-size:15.0px;font-style:normal;line-height:17px;font-weight:400;color:#000001;display:inline;">
+                                            <a style="text-decoration: none; color: #000001;"
+                                              href="https://www.google.com/maps?ll=46.764297,2.012311&z=17&t=m&hl=nl&gl=BE&mapclient=embed&cid=13840459975442114610"
+                                              target="_blank"><img style="width: 18px;"
+                                                src="https://maisonlaventure.be/img/mail/location.png"
+                                                alt="location icon"> Les Petites
+                                              Douces, 36120 Pruniers (Indre)</a> </span>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td style="border-collapse:collapse;padding-bottom:1px;height:3px;"></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+                `
     };
     // Send mail
     transporter_maison.sendMail(mailOptionsMaisonNoreply, function (err, data) {
@@ -191,10 +490,11 @@ app.post('/mailserver/simulatie', async (req, res) => {
                 <h3>
                 Beste ${req.body.voornaam}</h3>
                 <h3>
-                Bedankt voor je contactaanvraag via onze website.  Je mag binnen de 24u een antwoord van ons verwachten.<br>
-                 Wij nemen  spoedig verder contact met u op.</h3>
+                Bedankt voor je contactaanvraag via onze website.  Je mag binnen de 24u een antwoord van ons verwachten.<br></h3>
                  <h3>
                 Voor meer info mail naar <a href="mailto:info@maisonlaventure.be">info@maisonlaventure.be</a> </h3>
+                <br>
+
                 `
     };
     // Send mail
@@ -272,16 +572,314 @@ app.post('/mailserver/maison', async (req, res) => {
         from: 'noreply <noreply@maisonlaventure.be>',
         to: req.body.email,
         subject: "Bedankt voor uw reservatie! [NOREPLY]",
-        html: `
-        <img style="width:15rem;" src="https://maisonlaventure.be/img/logo_transparent.png">
-        <h1>Bedankt voor uw reservatie!</h1>   
-                <h3>
-                Beste ${req.body.voornaam}</h3>
-                <h3>
-                Bedankt voor je contactaanvraag via onze website.  Je mag binnen de 24u een antwoord van ons verwachten.<br>
-                 Wij nemen  spoedig verder contact met u op.</h3>
-                 <h3>
-                Voor meer info mail naar <a href="mailto:info@maisonlaventure.be">info@maisonlaventure.be</a> </h3>
+        html: `        <h1>Bedankt voor uw reservatie!</h1>   
+        <p>
+        Beste ${req.body.voornaam}</p>
+        <p>
+        Bedankt voor je contactaanvraag via onze website.  Je mag binnen de 24u een antwoord van ons verwachten.<br></p>
+         <p>
+        Voor meer info mail naar <a href="mailto:info@maisonlaventure.be">info@maisonlaventure.be</a> </p>
+        <br>
+        <table id="zs-output-sig" border="0" cellpadding="0" cellspacing="0"
+style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse; width:650px;">
+<tbody>
+<tr>
+<td style="padding: 0px !important;">
+  <table border="0" cellpadding="0" cellspacing="0"
+    style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse;">
+    <tbody>
+      <tr>
+        <td style="padding: 0px !important;">
+          <table border="0" cellpadding="0" cellspacing="0"
+            style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse;">
+            <tbody>
+              <tr>
+                <td style="padding: 0px !important;">
+                  <table border="0" cellpadding="0" cellspacing="0"
+                    style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse;">
+                    <tbody>
+                      <tr>
+                        <td style="padding: 0px !important;">
+                          <table border="0" cellpadding="0" cellspacing="0"
+                            style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse;">
+                            <tbody>
+                              <tr>
+                                <td
+                                  style="border-collapse:collapse;font-family:Helvetica, sans-serif;font-size:15.0px;font-style:normal;line-height:17px;font-weight:400;padding: 0px !important;">
+                                  <span
+                                    style="font-family:Helvetica, sans-serif;font-size:15.0px;font-style:normal;line-height:17px;font-weight:400;color:#000001;display:inline;">
+                                    Met vriendelijke groeten,</span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="border-collapse:collapse;padding-bottom:7px;height:7px;"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</td>
+</tr>
+<tr>
+<td style="padding: 0px !important;">
+  <table border="0" cellpadding="0" cellspacing="0"
+    style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse;">
+    <tbody>
+      <tr>
+        <td width="156" style="padding: 0px !important;">
+          <table border="0" cellpadding="0" cellspacing="0"
+            style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse;">
+            <tbody>
+              <tr>
+                <td style="border-collapse:collapse;line-height:0px;padding: 0px !important;"><img height="128"
+                    width="200" alt="" border="0" src="https://maisonlaventure.be/img/mail/logo_cropped.png">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+        <!-- asdfasdf? -->
+        <td width="11" style="border-collapse:collapse;padding-right: 10px;width:0px;"></td>
+        <td style="padding: 0px !important;width: 205px;position: relative;">
+          <table border="0" cellpadding="0" cellspacing="0"
+            style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse;position: absolute;top: 10px;">
+            <tbody>
+              <tr>
+                <td style="padding: 0px !important;">
+                  <table border="0" cellpadding="0" cellspacing="0"
+                    style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse;">
+                    <tbody>
+                      <tr>
+                        <td style="padding: 0px !important;">
+                          <table border="0" cellpadding="0" cellspacing="0"
+                            style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse;">
+                            <tbody>
+                              <tr>
+                                <td
+                                  style="border-collapse:collapse;font-family:Helvetica, sans-serif;font-size:15.0px;font-style:normal;line-height:17px;font-weight:400;padding: 0px !important;">
+                                  <span
+                                    style="font-family:Helvetica, sans-serif;font-size:18px;font-style:normal;line-height:17px;font-weight:800;color:#000001;display:inline;text-align: right;">Team
+                                    Maison l'Aventure</span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="border-collapse:collapse;padding-bottom:1px;height:3px;"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+
+
+              <tr style="float: right;padding-top: 5px;">
+                <td style="padding: 0px !important;">
+                  <table border="0" cellpadding="0" cellspacing="0"
+                    style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse; ">
+                    <tbody>
+                      <tr>
+                        <td style="padding: 0px !important;">
+                          <table border="0" cellpadding="0" cellspacing="0"
+                            style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse;">
+                            <tbody>
+                              <tr>
+                                <td
+                                  style="border-collapse:collapse;font-family:Helvetica, sans-serif;font-size:15.0px;font-style:normal;line-height:17px;font-weight:400;padding: 0px !important;">
+                                  <span
+                                    style="font-family:Helvetica, sans-serif;font-size:15.0px;font-style:normal;font-weight:400;color:#000001;display:inline; position: relative;">
+                                    <a style="text-decoration: none; color: #000001; position: absolute; right: 28px;top: 1.3px;"
+                                      href="https://www.facebook.com/Maisonlaventure/" target="_blank"><img
+                                        style="width: 15px;"
+                                        src="https://maisonlaventure.be/img/mail/facebook.png"
+                                        alt="facebook icon"> <a style="position: absolute; right: 0;"
+                                        href="https://www.instagram.com/maison_laventure/" target="_blank"><img
+                                          style="width: 18px;"
+                                          src="https://maisonlaventure.be/img/mail/instagram.png"
+                                          alt="instagram icon"></a>
+                                  </span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="border-collapse:collapse;padding-bottom:1px;height:3px;"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+        <td width="11" style="border-collapse:collapse;padding-right: 14px;width:0px;"></td>
+
+        <td width="2"
+          style="border-collapse:collapse;background-color:#1B7034;width: 1px;vertical-align: super;padding: 0px !important;">
+        </td>
+        <td width="11" style="border-collapse:collapse;padding-right: 14px;width:0px;"></td>
+
+        <!-- asdfasdfasdf -->
+        <td style="padding: 0px !important;">
+          <table border="0" cellpadding="0" cellspacing="0"
+            style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse;">
+            <tbody>
+              <tr>
+                <td style="padding: 0px !important;">
+                  <table border="0" cellpadding="0" cellspacing="0"
+                    style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse;">
+                    <tbody>
+                      <tr>
+                        <td style="padding: 0px !important;">
+                          <table border="0" cellpadding="0" cellspacing="0"
+                            style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse;">
+                            <tbody>
+                              <tr>
+                                <td
+                                  style="border-collapse:collapse;font-family:Helvetica, sans-serif;font-size:15.0px;font-style:normal;line-height:17px;font-weight:400;padding: 0px !important;">
+                                  <span
+                                    style="font-family:Helvetica, sans-serif;font-size:15.0px;font-style:normal;line-height:17px;font-weight:400;color:#000001;display:inline;text-decoration: none;color: black;"><a
+                                      target="_blank" href="tel:+32475285068"
+                                      style="text-decoration: none; color:black;"><img style="width: 18px;"
+                                        src="https://maisonlaventure.be/img/mail/phone.png" alt="phone icon">
+                                      0033/9-75 35 72 71&nbsp;</a></span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="border-collapse:collapse;padding-bottom:1px;height:3px;"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding: 0px !important;">
+                  <table border="0" cellpadding="0" cellspacing="0"
+                    style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse;">
+                    <tbody>
+                      <tr>
+                        <td style="padding: 0px !important;">
+                          <table border="0" cellpadding="0" cellspacing="0"
+                            style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse;">
+                            <tbody>
+                              <tr>
+                                <td
+                                  style="border-collapse:collapse;font-family:Helvetica, sans-serif;font-size:15.0px;font-style:normal;line-height:17px;font-weight:400;padding: 0px !important;">
+                                  <span
+                                    style="font-family:Helvetica, sans-serif;font-size:15.0px;font-style:normal;line-height:17px;font-weight:400;color:#000001;display:inline;">
+                                    <a href="mailto:info@maisonlaventure.be"
+                                      style="text-decoration: none; color:black;"><img style="width: 18px;"
+                                        src="https://maisonlaventure.be/img/mail/mail.png" alt="mail icon">
+                                      info@maisonlaventure.be</a> </span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="border-collapse:collapse;padding-bottom:1px;height:3px;"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding: 0px !important;">
+                  <table border="0" cellpadding="0" cellspacing="0"
+                    style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse;">
+                    <tbody>
+                      <tr>
+                        <td style="padding: 0px !important;">
+                          <table border="0" cellpadding="0" cellspacing="0"
+                            style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse;">
+                            <tbody>
+                              <tr>
+                                <td
+                                  style="border-collapse:collapse;font-family:Helvetica, sans-serif;font-size:15.0px;font-style:normal;line-height:17px;font-weight:400;padding: 0px !important;">
+                                  <span
+                                    style="font-family:Helvetica, sans-serif;font-size:15.0px;font-style:normal;line-height:17px;font-weight:400;color:#000001;display:inline;">
+                                    <a style="text-decoration: none; color: #000001;"
+                                      href="https://maisonlaventure.be/" target="_blank"><img
+                                        style="width: 18px;"
+                                        src="https://maisonlaventure.be/img/mail/internet.png"
+                                        alt="internet icon"> www.maisonlaventure.be</a></span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="border-collapse:collapse;padding-bottom:1px;height:3px;"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding: 0px !important;">
+                  <table border="0" cellpadding="0" cellspacing="0"
+                    style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse;">
+                    <tbody>
+                      <tr>
+                        <td style="padding: 0px !important;">
+                          <table border="0" cellpadding="0" cellspacing="0"
+                            style="font-family:Arial,Helvetica,sans-serif;line-height:0px;font-size:1px;padding:0px!important;border-spacing:0px;margin:0px;border-collapse:collapse;">
+                            <tbody>
+                              <tr>
+                                <td
+                                  style="border-collapse:collapse;font-family:Helvetica, sans-serif;font-size:15.0px;font-style:normal;line-height:17px;font-weight:400;padding: 0px !important;">
+                                  <span
+                                    style="font-family:Helvetica, sans-serif;font-size:15.0px;font-style:normal;line-height:17px;font-weight:400;color:#000001;display:inline;">
+                                    <a style="text-decoration: none; color: #000001;"
+                                      href="https://www.google.com/maps?ll=46.764297,2.012311&z=17&t=m&hl=nl&gl=BE&mapclient=embed&cid=13840459975442114610"
+                                      target="_blank"><img style="width: 18px;"
+                                        src="https://maisonlaventure.be/img/mail/location.png"
+                                        alt="location icon"> Les Petites
+                                      Douces, 36120 Pruniers (Indre)</a> </span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="border-collapse:collapse;padding-bottom:1px;height:3px;"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</td>
+</tr>
+
+</tbody>
+</table>
                 `
     };
     // Send mail
