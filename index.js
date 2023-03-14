@@ -55,7 +55,7 @@ var transporter_maison_meldingen = nodemailer.createTransport({
 })
 
 
-app.get('/meldingenTest', async (req, res) => {
+app.get('/mailserver/meldingenTest', async (req, res) => {
   var mailOptionsMeldingMaison = {
     from: "Meldingen <meldingen@maisonlaventure.be>",
     to: 'thomas.meylaers@gmail.com',
