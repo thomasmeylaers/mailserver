@@ -44,6 +44,35 @@ var transporter_maison = nodemailer.createTransport({
   }
 })
 
+var transporter_maison_meldingen = nodemailer.createTransport({
+  host: 'smtp.strato.com',
+  port: 465,
+  secure: true,
+  auth: {
+    user: 'noreply@maisonlaventure.be',
+    pass: process.env.MAISON_PW
+  }
+})
+
+
+app.get('/meldingenTest', async (req, res) => {
+  var mailOptionsMeldingMaison = {
+    from: "Meldingen <meldingen@maisonlaventure.be>",
+    to: 'thomas.meylaers@gmail.com',
+    subject: "Nieuw bericht van maisonlaventure.be",
+    html: `<h3>Voornaam: </h3>
+                <h3>Achternaam: </h3>
+                <h3>E-mail: </h3>
+                <h3>Telefoonnummer: </h3>
+                <h3>Bericht: </h3>
+                `
+  };
+  // Send mail
+  transporter_maison_meldingen.sendMail(mailOptionsMeldingMaison, function (err, data) {
+    if (err) return res.status(500).send(err)
+  });
+})
+
 app.get('/mongotest', async (req, res) => {
   const new_reservering = await Reservering.create({
     voornaam: "thomas",
@@ -848,7 +877,7 @@ app.post('/mailserver/maison', async (req, res) => {
   });
   // Mailoptions
   var mailOptionsMaison = {
-    from: 'noreply <noreply@freshpepperdesign.com>',
+    from: 'Meldingen <meldingen@maisonlaventure.be>',
     to: 'info@maisonlaventure.be',
     subject: "Nieuw bericht van maisonlaventure.be",
     html: `<h3>Voornaam: ${req.body.voornaam}</h3>
@@ -859,7 +888,7 @@ app.post('/mailserver/maison', async (req, res) => {
                 `
   };
   // Send mail
-  transporter.sendMail(mailOptionsMaison, function (err, data) {
+  transporter_maison_meldingen.sendMail(mailOptionsMaison, function (err, data) {
     if (err) return res.status(500).send(err)
   });
 
