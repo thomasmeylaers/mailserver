@@ -126,9 +126,9 @@ app.get('/mailserver/test', (req, res) => {
   var mailOptionsMaisonNoreply = {
     from: 'noreply <noreply@maisonlaventure.be>',
     to: 'thomas.meylaers@gmail.com',
-    subject: "Bedankt voor uw reservatie! [NOREPLY]",
+    subject: "Bedankt voor uw aanvraag! [NOREPLY]",
     html: `
-        <h1>Bedankt voor uw reservatie!</h1>   
+        <h1>Bedankt voor uw aanvraag!</h1>   
                 <p>
                 Beste ${req.body.voornaam}</p>
                 <p>
@@ -512,8 +512,8 @@ app.post('/mailserver/simulatie', async (req, res) => {
   var mailOptionsMaisonNoreply = {
     from: 'noreply <noreply@maisonlaventure.be>',
     to: 'thomas.meylaers@gmail.com',
-    subject: "Bedankt voor uw reservatie! [NOREPLY]",
-    html: `        <h1>Bedankt voor uw reservatie!</h1>   
+    subject: "Bedankt voor uw aanvraag! [NOREPLY]",
+    html: `        <h1>Bedankt voor uw aanvraag!</h1>   
         <p>
         Beste ${req.body.voornaam}</p>
         <p>
@@ -896,8 +896,8 @@ app.post('/mailserver/maison', async (req, res) => {
   var mailOptionsMaisonNoreply = {
     from: 'noreply <noreply@maisonlaventure.be>',
     to: req.body.email,
-    subject: "Bedankt voor uw reservatie! [NOREPLY]",
-    html: `        <h1>Bedankt voor uw reservatie!</h1>   
+    subject: "Bedankt voor de aanvraag! [NOREPLY]",
+    html: `        <h1>Bedankt voor uw aanvraag!</h1>   
         <p>
         Beste ${req.body.voornaam}</p>
         <p>
